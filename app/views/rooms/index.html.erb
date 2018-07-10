@@ -1,0 +1,203 @@
+<!--<p id="notice"><%= notice %></p>
+
+<h1>Rooms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rooms.each do |room| %>
+      <tr>
+        <td><%= link_to 'Show', room %></td>
+        <td><%= link_to 'Edit', edit_room_path(room) %></td>
+        <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>-->
+
+<br>
+
+<%= link_to 'New Room', new_room_path %>
+
+<section class="page-title style1 parallax parallax1">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="wrap-box-search style1">
+							<form action="#" method="get" accept-charset="utf-8">
+								<span>
+									<input type="text" placeholder="원하시는 것을 입력해주세요" name="search">
+								</span>
+								<span class="location">
+									<span class="ti-location-pin"></span>
+									<input type="text" placeholder="음식점이름" name="location">
+								</span>
+								<span class="categories">
+									<span class="ti-angle-down"></span>
+									<select name="categories">
+									  <option value="">정보교류</option>
+										<option value="">혼밥매칭</option>
+									</select>
+								</span>
+								<button type="submit" class="search-btn">Search</button>
+							</form><!-- /form -->
+						</div><!-- /.wrap-box-search -->
+					</div><!-- /.col-md-12 -->
+				</div><!-- /.row -->
+			</div><!-- /.container -->
+			<div class="overlay"></div>
+		</section><!-- /.page-title -->
+
+		<section class="flat-row flat-imagebox style3">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="filter style2">
+							<div class="filter-title">
+								<h5>Filter by tag:</h5>
+								<span class="ti-angle-down"></span>
+							</div>
+							<div class="clearfix"></div>
+							<div class="select-filter">
+								<ul class="list-filter quarter">
+									<li class="active">
+										<span class="ti-check-box"></span>한식
+									</li>
+									<li>
+										<span class="ti-layout-width-full"></span>중식
+									</li>
+								</ul>
+								<ul class="list-filter quarter">
+									<li>
+										<span class="ti-layout-width-full"></span>일식
+									</li>
+									<li>
+										<span class="ti-layout-width-full"></span>양식
+									</li>
+								</ul>
+								<ul class="list-filter quarter">
+									<li>
+										<span class="ti-layout-width-full"></span>분식
+									</li>
+									<li>
+										<span class="ti-layout-width-full"></span>간편식
+									</li>
+								</ul>
+								<ul class="list-filter quarter">
+									<li>
+										<span class="ti-layout-width-full"></span>아시안
+									</li>
+									<li>
+										<span class="ti-layout-width-full"></span>육식
+									</li>
+									<!--<li class="active">
+										<span class="ti-check-box"></span>Most Reviewed
+									</li>
+									<li>
+										<span class="ti-layout-width-full"></span>Highest Rated
+									</li>-->
+								</ul>
+								<div class="clearfix"></div>
+							</div><!-- /.select-filter -->
+						</div><!-- /.filter -->
+						<div class="filter-result style2">
+							<div class="result">
+								<%= @rooms.count %> Results Found
+							</div>
+							<ul class="arrange">
+								<li class="active">
+									<span class="ti-view-grid"></span>
+								</li>
+								<li>
+									<span class="ti-view-list"></span>
+								</li>
+							</ul>
+						</div><!-- /.filter-result -->
+					</div><!-- /.col-md-12 -->
+				</div><!-- /.row -->
+				<% @rooms.each do |room| %>
+				<div class="wrap-imagebox style3">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="imagebox style2">
+								<div class="box-imagebox">
+									<div class="box-header">
+										<div class="box-image">
+											<img src="<%= asset_path 'page/img-v2-02.png'%>" alt="">
+											<a href="/rooms/<%=room.id%>" title="entering_room">  1 / <%=room.max_count%><br/><br/>ENTER</a>
+										</div>
+									</div><!-- /.box-header -->
+									<div class="box-header">
+									</div><!-- /.box-header -->
+									<div class="box-content">
+									  
+										<div class="box-title ad">
+											<span><%= room.room_type %></span><a href="/rooms/<%= room.id %>" title=""><%= room.room_title %></a><i class="fa fa-check-circle" aria-hidden="true"></i>
+											
+											<div class="text-right">
+												
+												밥먹는 시간 : <%= room.start_time_hour%>시 <%= room.start_time_min %>분 ~ 끝나는 시간 해주기
+											</div>
+										</div>
+										<ul class="room_type ">
+											<li><i><span class="ti-check-box"></span> <%= room.food_type %></i></li>
+										</ul>
+										<div class="box-desc">
+											<%= room.hashtag %>
+										</div>
+									</div><!-- /.box-content -->
+								</div><!-- /.box-imagebox -->
+							</div><!-- /.imagebox style2 -->
+						</div><!-- /.col-sm-12 -->
+						<% end %>
+						<!-- 이건 템플릿 하나 새거 -->
+					</div><!-- /.row -->
+					<div class="row">
+						<div class="col-md-12">
+							<div class="btn-more">
+								<a href="#" title="">Show More</a>
+							</div>
+						</div>
+					</div><!-- /.row -->
+				</div>
+			</div><!-- /.container -->
+		</section><!-- /.flat-imagebox style3 -->
+
+		<section class="flat-row flat-subscribe">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-7">
+						<div class="subscribe-text">
+							Subscribe and be notified about new locations
+						</div>
+					</div><!-- /.col-sm-7 -->
+					<div class="col-sm-5">
+						<div class="subscribe-form">
+							<form action="#" method="get" accept-charset="utf-8">
+								<div class="subscribe-content">
+									<div class="input-field">
+										<input type="email" name="yourEmail" placeholder="Your Email" />
+									</div>
+									<button><span class="arrow_right"></span></button>
+								</div>
+							</form>
+						</div><!-- /.subscribe-form -->
+					</div><!-- /.col-sm-5 -->
+				</div><!-- /.row -->
+			</div><!-- /.container -->
+		</section><!-- /.flat-subscibe -->
+		
+	<% content_for 'javascript_content' do %>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtRmXKclfDp20TvfQnpgXSDPjut14x5wk&region=GB"></script>
+	<%= javascript_include_tag params[:controller] %>
+	
+	<script>
+
+	    
+	</script>
+	<% end %>

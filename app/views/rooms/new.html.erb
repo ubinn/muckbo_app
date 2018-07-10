@@ -1,0 +1,147 @@
+		<section class="page-title parallax parallax1">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="page-title-heading">
+							Adding Room
+						</div>
+						<!--<ul class="breadcrumbs">
+							<li>
+								<a href="/" title="">Home</a>
+								 <span class="arrow_right"></span>
+							</li>
+							<li>
+								Pages
+							</li>
+						</ul>-->
+					</div><!-- /.col-md-12 -->
+				</div><!-- /.row -->
+			</div><!-- /.container -->
+			<div class="overlay"></div>
+		</section><!-- /.page-title -->
+		<section class="flat-listing">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<form action="/rooms" class="form-listing" method="post" accept-charset="utf-8">
+							<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+							<!--<div class="inner-box">
+								<p>If you don’t have an account you can create one below by entering your email address/username.<br />
+								Your account details will be confirmed via email.</p>
+								<div class="btn-more">
+									<a href="/sign_in" title="">Sign in</a>
+								</div>
+								<div class="clearfix"></div>
+							</div><!-- /.inner-box -->
+							<div class="inner-box form style1">
+								<div class="one-half">
+								    <div class="wrap-listing room-title">
+								    	<label>Room title</label>
+									    <input type="text" name="room[room_title]" placeholder="방 제목을 입력해주세요.">
+							    	</div><!-- /.wrap-listing -->
+									<div class="wrap-listing room_type">
+										<label>Room type</label>
+										<span class="ti-angle-down"></span>
+										<select name="room[room_type]">
+											<option value="먹방">먹방</option>
+											<option value="정보교류">정보교류</option>
+										</select>
+									</div><!-- /.wrap-listing -->
+									<div class="wrap-listing max-count">
+								    <label>최대 인원수</label>
+									<span class="ti-angle-down"></span>
+										<select name="room[max_count]">
+											<option value="4">4</option>
+											<option value="3">3</option>
+											<option value="2">2</option>
+										</select>
+								</div><!-- /.wrap-listing -->
+									
+								</div>
+								<div class="one-half">
+								    <div class="wrap-listing food_type">
+										<label>food type</label>
+										<span class="ti-angle-down"></span>
+										<select name="room[food_type]">
+											<option value="한식">한식</option>
+											<option value="중식">중식</option>
+											<option value="일식">일식</option>
+											<option value="양식">양식</option>
+											<option value="육식">육식</option>
+											<option value="육식">분식</option>
+											<option value="육식">간편식</option>
+											<option value="육식">아시안</option>
+										</select>
+									</div><!-- /.wrap-listing -->
+									<label>만날시간을 선택해주세요.</label>
+									<div class="wrap-listing business">
+										<div class="day">
+											<span class="ti-angle-down"></span>
+											<select name="start_date">
+												<option value="">Today</option>
+											</select>
+										</div>
+										<div class="hour-from">
+											<span class="ti-angle-down"></span>
+											<select name="room[start_time_hour]">
+												<option value="09">09</option>
+												<option value="10">10</option>
+												<option value="11">11</option>
+												<option value="12">12</option>
+												<option value="13">13</option>
+												<option value="14">14</option>
+												<option value="15">15</option>
+												<option value="16">16</option>
+												<option value="17">17</option>
+												<option value="18">18</option>
+												<option value="19">19</option>
+												<option value="20">20</option>
+											</select>
+										</div>
+										<div class="hour-to">
+											<span class="ti-angle-down"></span>
+											<select name="room[start_time_min]">
+												<option value="00">00</option>
+												<option value="30">30</option>
+											</select>
+										</div>
+										<div class="btn-business">
+											<button class="ti-plus" type="button"></button>
+										</div>
+										<span class="clearfix"></span>
+									</div><!-- /.wrap-listing -->
+									<div class="info-business">
+										<div class="item">
+											<span class="hour-from">09:00</span>
+											<span class="line">-</span>
+											<span class="hour-to">22:00</span>
+											<span class="btn-close ti-close"></span>
+										</div>
+									</div>
+								</div>
+								
+								<div class="clearfix"></div>
+									<div class="wrap-listing hashtag">
+									    <label>HashTag (optional)</label>
+									    <input type="text" name="room[hashtag]" placeholder="해쉬태그를 입력해주세요.">
+								    </div><!-- /.wrap-listing -->
+								    <br>
+							<div class="text-center">
+							    <button class="submit-form-listing" type="submit">방 만들기</button>
+							</div>
+							</div><!-- /.inner-box -->
+							
+                            
+							<!--<div class="inner-box form">
+								<div class="wrap-listing room-title">
+									<label>Room title</label>
+									<input type="text" name="room_title" placeholder="방 제목을 입력해주세요.">
+								</div><!-- /.wrap-listing -->
+
+						        <div class="clearfix"></div>
+							</div><!-- /.inner-box -->
+						</form><!-- /.form-listing -->
+					</div><!-- /.col-md-12 -->
+				</div><!-- /.row -->
+			</div><!-- /.container -->
+		</section><!-- /.flat-listing -->

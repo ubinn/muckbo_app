@@ -1,0 +1,91 @@
+		<section class="tp-banner">
+			<div id="rev_slider_1078_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="classic4export" data-source="gallery" style="margin:0px auto;background-color:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
+            <!-- START REVOLUTION SLIDER 5.3.0.2 auto mode -->
+	            <div id="rev_slider_1078_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.3.0.2">
+	                <div class="slotholder"></div>
+	                <ul><!-- SLIDE  -->
+	            
+	                    <!-- SLIDE 1 -->
+	                    <li data-index="rs-3049" data-transition="slideremovedown" data-slotamount="7" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000"    data-rotate="0"  data-saveperformance="off"  data-title="Ken Burns" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">                        
+
+	                        <!-- MAIN IMAGE -->
+	                        <img src="<%= asset_path 'slider/01.png' %>"  alt=""  data-bgposition="center center" data-kenburns="off" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+	                    </li>
+
+	                    <!-- SLIDE 2 -->
+	                   <li data-index="rs-3048" data-transition="slideremoveright" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000"    data-rotate="0"  data-saveperformance="off"  data-title="HTML5 Video" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+	                        <!-- MAIN IMAGE -->
+	                        <img src="<%= asset_path 'slider/02.png' %>"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+	                    </li>
+
+	                    <li data-index="rs-3048" data-transition="slideremoveright" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000"    data-rotate="0"  data-saveperformance="off"  data-title="HTML5 Video" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+	                        <!-- MAIN IMAGE -->
+	                        <img src="<%= asset_path 'slider/03.png' %>"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+	                    </li>         
+	                </ul>
+	            </div>
+	    	</div><!-- END REVOLUTION SLIDER -->
+		</section><!-- /.tp-banner -->
+
+		<section class="flat-title">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8">
+						<div class="title-left">
+							<div class="queue">
+								<i class="fa fa-star" aria-hidden="true"></i>
+								<i class="fa fa-star" aria-hidden="true"></i>
+								<i class="fa fa-star" aria-hidden="true"></i>
+								<i class="fa fa-star" aria-hidden="true"></i>
+								<i class="fa fa-star-half-o" aria-hidden="true"></i>
+							</div><!-- /.queue -->
+							<div class="box-title">
+								<span><%= @room.room_type %></span><br/><a title=""><%= @room.room_title %></a><i class="fa fa-check-circle" aria-hidden="true"></i>
+							</div><!-- /.box-title -->
+						
+							<ul class="box-address">
+								<li><span class="ti-check-box"></span>	<%= @room.food_type%></li>
+								<li><i> 밥먹는 시간 : <%= @room.start_time_hour%>시 <%= @room.start_time_min %>분 </i> </li>
+							</ul><!-- /.box-address -->
+						</div><!-- /.title-left -->
+					</div><!-- /.col-md-8 -->
+					<div class="col-md-4">
+						<div class="title-right">
+							<div class="btn-more match">
+								<a href="#" title="">Ready</a>
+							</div>
+								<div class="btn-more">
+									<a href="#" title="">Match</a>
+								</div>
+							<div class="clearfix"></div>
+						</div><!-- /.title-right -->
+					</div><!-- /.col-md-4 -->
+				</div><!-- /.row -->
+			</div><!-- /.container -->
+		</section><!-- /.flat-title -->
+
+		<section class="flat-row flat-explore-detail">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8">
+						<div class="text-box">
+							<h3>HashTag</h3>
+							<div class="text-desc">
+								<i><%= @room.hashtag %></i>
+							</div>
+						</div>
+					</div><!-- /.col-md-8 -->
+					<div class="col-md-4">
+						참가하는 유저 리스트 띄워주기 혹은, 명수만 보여주기.
+					</div><!-- /.col-md-4 -->
+				</div><!-- /.row -->
+			</div><!-- /.container -->
+		</section><!-- /.flat-explore-detail <-->
+	
+	<%= link_to 'Back', rooms_path %>
+<% content_for 'javascript_content' do %>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtRmXKclfDp20TvfQnpgXSDPjut14x5wk&region=GB"></script>
+
+<%= javascript_include_tag params[:controller] %>
+
+<% end %>
